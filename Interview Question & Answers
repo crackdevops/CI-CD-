@@ -1,7 +1,5 @@
 HOW TO ANSWER CICD PROCESS IN AN INTERVIEW :
 
-
-
 Once the user commits the code to a git repository then we use jenkins as a orchestrater which takes care of our continous integration part using multiple stages 
 We use jenkins groovy scripting where we use jenkins declarative pipelines for writing stages as part of it 
 The first stage is checkout-stage where we checkout the stage.
