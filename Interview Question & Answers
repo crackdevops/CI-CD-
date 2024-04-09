@@ -1,0 +1,46 @@
+HOW TO ANSWER CICD PROCESS IN AN INTERVIEW :
+
+
+
+Once the user commits the code to a git repository then we use jenkins as a orchestrater which takes care of our continous integration part using multiple stages 
+We use jenkins groovy scripting where we use jenkins declarative pipelines for writing stages as part of it 
+The first stage is checkout-stage where we checkout the stage.
+The second stage is Build and Unit Testing we also perform static code analysis. 
+Then we move towards the Code Scanning stage and once the code scanning is done if everything is finewe will move towards the building of image.
+In this case we are building container image because the target platform is kubernetes.
+Then we perform the image scanning to verify that the image build is safe from the security vulerabilities and finally we push this image to the image registry.
+We take the new version of image and We update the k8s yaml manifests or we update the helm charts on to a git repository(git repository can be a different one or same one) 
+Finally we have a GitOps tool ArgoCD which is watching from this helm charts whenever there is a new code commit or new version that is made to this git repository
+It picks up the new commit and deploy it's on to the k8s cluster.
+
+
+
+Question 1: What is CI?
+Answer: CI stands for Continuous Integration. It is a DevOps software development methodology. It is a process of integrating the code changes that are done by various developers into the shared project repository. 
+
+Question 2: What is the use of CI?
+Answer: CI is used to merge the code changes that are done by one or many contributors into the project repository. 
+
+Question 3: What is DevOps?
+Answer: In the word DevOps, Dev stands for development, and Ops stands for operations. It is a software methodology that includes tools, which further help in communicating, integrating, and collaborating in the development cycle.
+
+Question 4: What is the CD?
+Answer: CD stands for continuous delivery. It is a software engineering approach. Continuous delivery works with continuous integration in order to make a complete flow, which helps in delivering code packages.
+
+Question 5: What is Git?
+Answer: Git is open-source software. It allows data integrity and manages workflows easily. Git gives a way to coordinate among team members easily.
+
+Question 6: What is version control?
+Answer:  Version control allows tracking all changes made in the source code.
+
+Question 7: What is Continuous Deployment?
+Answer: Continuous deployment can be defined as a software development strategy. It allows the release of code changes that are done in an application into the production environment automatically. 
+
+Question 8: What is Continuous Testing?
+Answer: Continuous testing is the process of testing in which manual steps of testing are eliminated. Automated routines are set up, which helps in reducing human work. 
+
+Question 9: Why is Continuous Testing important?
+Answer: Continuous testing is important in DevOps. As it eliminates human efforts. And also decreases the errors that might occur due to manual testing.
+
+Question 10: What is the DevOps pipeline?
+Answer: The DevOps pipeline can be defined as the processes and tools. This allows developers(Dev) and operations(Ops) to work together. It is useful in deploying code changes to the production environment.
